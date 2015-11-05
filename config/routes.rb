@@ -1,15 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'projects/index'
-
-  get 'projects/show'
-
-  get 'projects/new'
-
-  get 'projects/create'
-
-  get 'projects/delete'
-
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -19,6 +9,7 @@ Rails.application.routes.draw do
 
   resources :project_monitor, :only=>[:create]
 
+  resources :project
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
