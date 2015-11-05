@@ -16,6 +16,8 @@ gem 'mysql2'
 
 gem "slim-rails"
 
+gem 'devise'
+
 gem 'bootstrap-sass', '~> 3.3.5'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
