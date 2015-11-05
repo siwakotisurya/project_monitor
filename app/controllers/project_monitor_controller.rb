@@ -6,9 +6,9 @@ class ProjectMonitorController < ApplicationController
   def create
   @user = User.new(set_db)
   if @user.save
-  
+    flash[:msg] = "Congratulations yout account has been created"
   else
-
+    flash[:msg] = "Sorry account could not created"
   end
   end
 
