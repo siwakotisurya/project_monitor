@@ -7,6 +7,7 @@ class ProjectMonitorController < ApplicationController
   @user = User.new(set_db)
   if @user.save
     flash[:msg] = "Congratulations yout account has been created"
+    redirect_to projects_path
   else
     flash[:msg] = "Sorry account could not created"
   end

@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   resources :project_monitor, :only=>[:create]
 
-  resources :project
+  resources :projects
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
