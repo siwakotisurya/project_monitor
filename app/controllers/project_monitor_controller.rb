@@ -1,2 +1,0 @@
-class ProjectMonitorController < ApplicationController
-end
