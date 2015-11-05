@@ -9,7 +9,6 @@
     .collapse.navbar-collapse#navbar
       ul.nav.navbar-nav.navbar-right
         li = link_to "Sign In"
-        li = link_to "Sign Up"
 .container
   .col-md-12
     .col-md-7
@@ -18,16 +17,16 @@
         .panel-heading
           h4 Signup
         .panel-body
-          =form_for :asd do |f|
+          =form_for :user, url: project_monitor_index_path do |f|
             .form-group
               =f.label "Full Name"
-              =f.text_field :username, :class=>"form-control"
+              =f.text_field :full_name, :class=>"form-control"
             .form-group
               =f.label "Email"
-              =f.text_field :username, :class=>"form-control"
+              =f.text_field :email, :class=>"form-control"
             .form-group
               =f.label "Password"
-              =f.text_field :username, :class=>"form-control"
+              =f.password_field :password, :class=>"form-control"
             .form-group
               =f.submit("Submit", :class=>"btn btn-primary") 
           end
