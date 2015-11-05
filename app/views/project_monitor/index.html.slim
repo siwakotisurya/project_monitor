@@ -1,2 +1,36 @@
-h1 ProjectMonitor#index
-p Find me in app/views/project_monitor/index.html.slim
+.navbar.navbar-default.navbar-static-top
+  .container
+    .navbar-header
+      button.navbar-toggle type="button" data-toggle="collapse" data-target="#navbar"
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand href="#" Chat Online
+    .collapse.navbar-collapse#navbar
+      ul.nav.navbar-nav.navbar-right
+        li = link_to "Sign In"
+        li = link_to "Sign Up"
+.container
+  .col-md-12
+    .col-md-7
+      h4 "Chat from anywhere at anytime on chatonline.com"
+      =image_tag "chat.png", :width=>"410px", :class=>"img-responsive"
+    .col-md-5
+      .panel.panel-success
+        .panel-heading
+          h4 Signup
+        .panel-body
+          =form_for :asd do |f|
+            .form-group
+              =f.label "Full Name"
+              =f.text_field :username, :class=>"form-control"
+            .form-group
+              =f.label "Email"
+              =f.text_field :username, :class=>"form-control"
+            .form-group
+              =f.label "Password"
+              =f.text_field :username, :class=>"form-control"
+            .form-group
+              =f.submit("Submit", :class=>"btn btn-primary") 
+          end
+    .panel
