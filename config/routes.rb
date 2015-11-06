@@ -5,11 +5,25 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'project_monitor#index'
-
+  #root 'project_monitor#index'
+  
   resources :project_monitor, :only=>[:create]
 
   resources :projects
+  
+  get "project_monitor#api_provide"
+
+  authenticated :user do
+    devise_scope :user do
+    root to: "projects#index", :as => "profile"
+    end
+  end
+
+  unauthenticated do
+    devise_scope :user do
+      root to: "project_monitor#index", :as => "unauthenticated"
+  end
+end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

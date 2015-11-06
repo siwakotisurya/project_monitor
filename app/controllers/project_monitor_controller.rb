@@ -1,6 +1,6 @@
 class ProjectMonitorController < ApplicationController
   def index
-  @user = User.new
+    
   end
 
   def create
@@ -11,6 +11,10 @@ class ProjectMonitorController < ApplicationController
   else
     flash[:msg] = "Sorry account could not created"
   end
+  end
+
+  def api_provide 
+    
   end
 
   private def set_db

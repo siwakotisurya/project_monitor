@@ -2,15 +2,15 @@
   .col-md-12
     .col-md-7
       -if flash[:msg] 
-        .alert.alert-success 
+        .alert.alert-success
           =flash[:msg]
-        end
+      end
+        <br>
         -if @project.errors.full_messages.any?
-          .alert.alert-success
-            -@project.errors.full_messages.each do |s|
-              =s 
-              <br>
-        end
+          -@project.errors.full_messages.each do |s|
+            =s
+            <br>
+          end
       .panel.panel-primary
         .panel-heading
           h4 Add Monitor Service Name
@@ -21,17 +21,17 @@
               =f.text_field :service_name, :class=>"form-control", :placeholder=>"Eg: Shooping website"
             .form-group
               =f.label "Url or Ip address"
-              =f.text_field :website, :class=>"form-control", :placeholder=>"Eg: jyaasa.com or ip address"
+              =f.text_field :website, :class=>"form-control", :placeholder=>"Eg: http://google.com or ip address"
             .form-group
             .form-group
-              =f.label "Set Time Interval  "
+              =f.label "Set Time Interval"
               =f.select :time_interval, options_for_select([["10", 10],["20", 20],["30", 30]]), placeholder:"Duration you want to run" , class: 'form-control'
             .form-group
               =f.label "Select User"
               -if @users.present?
                 -@users.each do |s|
                   -if s.id!=7  
-                    =f.select :developer_mail, options_for_select([[""],[s.email , s.email]], :selected => "f.object.project_id"), placeholder:"Duration you want to run" , class: 'form-control'
+                    =f.select :developer_mail, options_for_select([[s.email , s.email]], :selected => "f.object.project_id"), placeholder:"Duration you want to run" , class: 'form-control'
                   end
                 end
               end

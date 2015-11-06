@@ -5,7 +5,12 @@
         span.icon-bar
         span.icon-bar
         span.icon-bar
-      a.navbar-brand href="#" Project Monitor
+      =link_to "Project Monitor", projects_path, :class=>"navbar-brand"
     .collapse.navbar-collapse#navbar
       ul.nav.navbar-nav.navbar-right
-        li = link_to "Sign In"
+        -if current_user.present?
+          li = link_to "Sign Out ", destroy_user_session_path, :method=>'delete' 
+        -else
+          li = link_to "Sign In", user_session_path
+        end
+        

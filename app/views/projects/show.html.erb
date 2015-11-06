@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="jumbotron">
+    <%=link_to "Go Back",projects_path%>
+    <%if @response.code == "200" || @response.code == "302"%>
+    <h2>Website Status : UP</h2>
+    <h2>Status Code : 200</h2>
+    <h2><%=@response_end_time%> Milli second</h2>
+    <h2><%=@duration%> Duration</h2>
+    <%elsif %>
+      <h2>Website Status : Seems Down</h2>
+      <h2>Status Code : <%=@response.code%></h2>
+      <h2><%=@response_end_time%> Milli second</h2>
+      <h2><%=@duration%> Duration</h2>
+    <%end%>
+  </div>
+</div>
